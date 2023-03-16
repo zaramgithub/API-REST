@@ -27,16 +27,16 @@ routes.post('/',(req,res) => { //CREATE
     });
 });
 
-// routes.put('/:id', (req, res)=>{
-//     req.getConnection((err, conn)=>{
-//         if(err) return res.send(err)
-//         conn.query('UPDATE books set ? WHERE id = ?', [req.body, req.params.id], (err, rows)=>{
-//             if(err) return res.send(err)
+routes.put('/:idBook', (req, res)=>{
+    req.getConnection((err, conn)=>{
+        if(err) return res.send(err)
+        conn.query('UPDATE books SET title=?, author=?, publishingHouse=? WHERE idBook=?', [req.body.title,req.body.author,req.body.publishingHouse, req.params.idBook], (err, rows)=>{
+            if(err) return res.send(err);
 
-//             res.send('book updated!')
-//         })
-//     })
-// })
+            res.send('book updated!');
+        });
+    });
+});
 
 
 routes.delete('/:id',(req,res)=>{ //DELETE
