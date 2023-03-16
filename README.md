@@ -1,2 +1,2 @@
-# LIBRARY-APP
-CRUD using MySQL, Express, React and NodeJS (MERN)
+# API REST CON NODE.js/Express y MySQL
+CRUD using MySQL, Express and NodeJS
